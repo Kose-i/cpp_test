@@ -1,8 +1,8 @@
-#include<stdio.h>
-#include"jisaku.h"
+#include <iostream>
 
-int main(){
-  testtwo();
-  printf("%d\n",testa);
-  return 0;
-  }
+#include "func.hpp"
+
+int main()
+{
+  std::cout << func(1, 2) << '\n';
+}
