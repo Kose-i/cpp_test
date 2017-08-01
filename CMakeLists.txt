@@ -1,2 +1,3 @@
 cmake_minimum_required(VERSION 3.5)
-add_executable(main main.cpp func.cpp)
+include_directories(include)
+add_executable(main src/main.cpp src/func.cpp)
