@@ -30,7 +30,7 @@ class my_time{
         this->minutes -= 60;
         ++this->hour;
       }
-      while (this->hour < 24)this->hour-=24;
+      while (this->hour >= 24)this->hour-=24;
     }
     void go_seconds(int seconds) {
       this->seconds+=seconds;
@@ -59,5 +59,7 @@ class my_time{
 
 int main(int argc, char** argv){
   class my_time t(3, 4,3);
+  t.output();
+  t.go_seconds(2);
   t.output();
 }
