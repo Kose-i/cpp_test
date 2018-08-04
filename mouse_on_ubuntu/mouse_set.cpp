@@ -1,18 +1,5 @@
-#ifndef MOUSE_SETUP_HPP
-#define MOUSE_SETUP_HPP
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <time.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <linux/input.h>
-#include <linux/uinput.h>
-
+#include "mouse_set.hpp"
+/*
 class Mouse_setup{
   private:
     int ui_fd;//uinput file district
@@ -27,5 +14,7 @@ class Mouse_setup{
     void push_bottom();
     void move_cursole();
 };
+*/
 
-#endif
+
+Mouse_setup::
