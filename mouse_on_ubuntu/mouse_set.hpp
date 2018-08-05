@@ -25,7 +25,8 @@ class Mouse_setup{
     void double_click()const;
   private:
     void push_bottom();
-    void move_cursole();
+    void pull_bottom();
+    void move_cursor();
 };
 
 #endif
