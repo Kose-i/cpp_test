@@ -1,11 +1,3 @@
-#include <iostream>
-
-#include <unistd.h>
-#include <ctime>
-#include <thread>
-#include <chrono>
-#include <iomanip>
-
 class my_time{
   public:
     my_time(){
@@ -55,11 +47,3 @@ class my_time{
     int minutes;
     int seconds;
 };
-
-
-int main(int argc, char** argv){
-  class my_time t(3, 4,3);
-  t.output();
-  t.go_seconds(2);
-  t.output();
-}
