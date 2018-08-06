@@ -53,13 +53,17 @@ void Mouse_setup::drag(){
   push_bottom();
 }
 
-void Mouse_setup::click(){}
+void Mouse_setup::click(){
+}
 
 void Mouse_setup::double_click(){
 }
 
-void Mouse_setup::push_bottom(){}
+void Mouse_setup::push_bottom(){
+}
 
-void Mouse_setup::pull_bottom(){}
+void Mouse_setup::pull_bottom(){
+}
 
-void Mouse_setup::move_cursor(){}
+void Mouse_setup::move_cursor(){
+}
