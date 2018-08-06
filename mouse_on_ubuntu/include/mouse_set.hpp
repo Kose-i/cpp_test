@@ -18,8 +18,9 @@ class Mouse_setup{
     int ui_fd;//uinput file district
     struct uinput_user_dev uidev;
   public:
-    constexpr Mouse_setup();
+    Mouse_setup();
     virtual ~Mouse_setup();
+    void initialize();
     void drag()const;
     void click()const;
     void double_click()const;

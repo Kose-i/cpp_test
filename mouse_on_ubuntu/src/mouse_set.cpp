@@ -19,7 +19,9 @@ class Mouse_setup{
 
 #define die(str) do{perror(str);exit(EXIT_FAILURE);}while(0)
 
-Mouse_setup::Mouse_setup(){
+Mouse_setup::Mouse_setup(){}
+void Mouse_setup::initialize()
+{
   ui_fd = open("/dev/uinput",O_WRONLY | O_NONBLOCK);
   if (ui_fd < 0) die("error :open");
 
@@ -49,14 +51,14 @@ Mouse_setup::~Mouse_setup(){
   close(ui_fd);
 }
 
-void Mouse_setup::drag(){
-  push_bottom();
+void Mouse_setup::drag()const{
+//  push_bottom();
 }
 
-void Mouse_setup::click(){
+void Mouse_setup::click()const{
 }
 
-void Mouse_setup::double_click(){
+void Mouse_setup::double_click()const{
 }
 
 void Mouse_setup::push_bottom(){
