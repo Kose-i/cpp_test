@@ -4,4 +4,4 @@ project(time
 
 include_directories(include)
 
-add_executable(main src/time_ararm.cpp src/main.cpp)
+add_executable(main src/main.cpp src/time_alarm.cpp)
