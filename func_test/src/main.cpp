@@ -4,5 +4,7 @@
 
 int main()
 {
-  std::cout << func(1, 2) << '\n';
+  func(1, 2);
+
+  #include"warning.hpp"
 }

@@ -1,1 +1,1 @@
-int func(int, int);
+void func(int, int);

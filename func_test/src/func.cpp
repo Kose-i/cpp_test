@@ -1,6 +1,8 @@
 #include "func.hpp"
 
-int func(int a, int b)
+#include <iostream>
+
+void func(int a, int b)
 {
-  return a * b * b * b;
+  std::cout << a * b * b * b << '\n';
 }
