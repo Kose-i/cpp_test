@@ -20,6 +20,7 @@ void Mine_sleeper::init()
 {
   bom_pos_init();
   board_init();
+  answer_init();
 };
 
 void Mine_sleeper::run()
@@ -83,7 +84,7 @@ void Mine_sleeper::print_result()
   std::cout << "___________answer\n";
   for (auto& e : answer_Board) {
     for (auto& f : e) {
-      std::cout << f;
+      std::cout << f << ' ';
     }
     std::cout << '\n';
   }
@@ -156,7 +157,7 @@ int Mine_sleeper::check_pos_count(const Point& pos)
   for(auto i = 0;i < 8;++i) {
     if(available_use[i]) {
       Point new_pos{pos + dir[i]};
-      if(board[get_y(new_pos)][get_x(new_pos)] == "*")++count;
+      if(answer_Board[get_y(new_pos)][get_x(new_pos)] == '*')++count;
     }
   }
   return count;
@@ -241,6 +242,8 @@ void Mine_sleeper::answer_init()
     for(auto j = 0;j < 9;++j) {
       if(answer_Board.at(i).at(j) == '*')continue;
       Point pos {j,i};
+      get_x(pos) = j;
+      get_y(pos) = i;
       answer_Board.at(i).at(j) = check_pos_count(pos) + '0';
     }
   }
