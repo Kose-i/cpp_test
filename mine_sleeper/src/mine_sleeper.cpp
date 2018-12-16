@@ -5,33 +5,31 @@
 #include <utility>
 #include <random>
 
-using Point = std::pair<int,int>;
+#include "mine_sleeper.hpp"
 
-const std::vector<Point> dir{{-1,-1},{0,-1},{1,-1},{-1,0},{1,0},{-1,1},{0,1},{1,1}};
   /*
      012
      3*4
      567
    */
-Point operator+(const Point& pos1, const Point& pos2)
+Point Mine_sleeper::operator+(const Point& pos1, const Point& pos2)
 {
   return {pos1.first + pos2.first, pos1.second + pos2.second};
 }
 
-template<typename T>
-T& get_x(std::pair<T, T>& value)
+int& Mine_sleeper::get_x(Point& value)
 {
   return value.first;
 }
 
 template<typename T>
-T& get_y(std::pair<T, T>& value)
+T& Mine_sleeper::get_y(std::pair<T, T>& value)
 {
   return value.second;
 }
 
 template <typename T>
-void print(const std::vector<std::vector<T>>& map)
+void Mine_sleeper::print(const std::vector<std::vector<T>>& map)
 {
   for(const auto& e : map)
   {
@@ -43,7 +41,7 @@ void print(const std::vector<std::vector<T>>& map)
   }
 }
 
-std::bitset<8> available_dic(const std::vector<std::vector<char>>& map, Point pos)
+std::bitset<8> Mine_sleeper::available_dic(const std::vector<std::vector<char>>& map, Point pos)
 {
   std::bitset<8> available_use("11111111");
   /*
@@ -70,7 +68,7 @@ std::bitset<8> available_dic(const std::vector<std::vector<char>>& map, Point po
   return available_use;
 }
 
-int check_pos_count(const Point& pos, const std::vector<std::vector<char>>& map)
+int Mine_sleeper::check_pos_count(const Point& pos, const std::vector<std::vector<char>>& map)
 {
   std::bitset<8> available_use = available_dic(map ,pos);
   /*
@@ -90,7 +88,7 @@ int check_pos_count(const Point& pos, const std::vector<std::vector<char>>& map)
   return count;
 }
 
-void print_map(std::vector<std::vector<std::string>> Board, Point pos)
+void Mine_sleeper::print_map(std::vector<std::vector<std::string>> Board, Point pos)
 {
   for(int i = 0;i < 9;++i)
   {
@@ -102,7 +100,7 @@ void print_map(std::vector<std::vector<std::string>> Board, Point pos)
     std::cout << '\n';
   }
 }
-void Board_cover(std::vector<std::vector<std::string>>& board,const std::vector<std::vector<char>>& answer,Point& pos)
+void Mine_sleeper::Board_cover(std::vector<std::vector<std::string>>& board,const std::vector<std::vector<char>>& answer,Point& pos)
 {
   /*
      012
@@ -134,11 +132,11 @@ void Board_cover(std::vector<std::vector<std::string>>& board,const std::vector<
     }
   }
 }
-void failure()
+void Mine_sleeper::failure()
 {
   std::cout << "you miss ~~(^△ ^)~\n";
 }
-bool check_board(std::vector<std::vector<std::string>> board)
+bool Mine_sleeper::check_board(std::vector<std::vector<std::string>> board)
 {
   int bom = 0;
   for(const auto& e : board)
@@ -155,11 +153,11 @@ bool check_board(std::vector<std::vector<std::string>> board)
   if(bom > 10)return false;
   return true;
 }
-void winner()
+void Mine_sleeper::winner()
 {
   std::cout << "you clear ~~(∵)~\n";
 }
-int main()
+int run()
 {
   std::vector<Point> bom_pos;
   std::random_device rng;
@@ -203,7 +201,6 @@ int main()
 
   std::cout << "________problem\n";
   print(Board);
-#if 1
   std::system("stty -icanon");
   Point now_pos{0,0};
   get_x(now_pos) = 0;get_y(now_pos) = 0;
@@ -254,7 +251,6 @@ int main()
     }
     std::cin >> ch;
   }
-#endif
   std::cout << "___________answer\n";
   print(answer_Board);
 }
