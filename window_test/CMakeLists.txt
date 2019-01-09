@@ -4,9 +4,17 @@ project(window_test)
 find_package(GTK2 COMPONENTS gtk REQUIRED)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-add_executable(gtk WIN32 src/window_game.cpp)
-target_link_libraries(gtk GTK2::gtk)
-#
-#add_executable(gtk-all-libs WIN32 main.c)
-#target_link_libraries(gtk-all-libs ${GTK2_LIBRARIES})
-#target_include_directories(gtk-all-libs PRIVATE ${GTK2_INCLUDE_DIRS})
+add_executable(ok_button WIN32 src/button.cpp)
+target_link_libraries(ok_button GTK2::gtk)
+
+add_executable(window_test WIN32 src/window.cpp)
+target_link_libraries(window_test GTK2::gtk)
+
+add_executable(window_test2 WIN32 src/window_2.cpp)
+target_link_libraries(window_test2 GTK2::gtk)
+
+#add_executable(ok_button WIN32 src/button.cpp)
+#target_link_libraries(ok_button GTK2::gtk)
+
+#add_executable(ok_button WIN32 src/button.cpp)
+#target_link_libraries(ok_button GTK2::gtk)

@@ -4,7 +4,7 @@ int main(int argc, char** argv) {
   GtkWidget *dialog;
 
   gtk_init(&argc, &argv);
-dialog = gtk_message_dialog_new(NULL, 
+  dialog = gtk_message_dialog_new(NULL, 
                                 GTK_DIALOG_DESTROY_WITH_PARENT, 
                                 GTK_MESSAGE_OTHER,
                                 GTK_BUTTONS_OK,
