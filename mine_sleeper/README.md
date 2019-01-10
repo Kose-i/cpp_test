@@ -1,5 +1,13 @@
 # MINE_SLEEPER
 
+## Config
+
+terminal
+
+`[cmd]stty`
+
+より制御します
+
 ## How to use
 
 | 入力キー | 動作 |
