@@ -2,10 +2,12 @@
 SRC1:=open_flags.cpp
 SRC2:=open_fd.cpp
 
-all:display_macro_bit open_fd
-display_macro_bit: ${SRC1}
-		g++ -o display_macro_bit ${SRC1}
+all:open_file
+
+open_file:open_flags open_fd
+open_flags: ${SRC1}
+		g++ -o open_flags ${SRC1}
 open_fd: ${SRC2}
 		g++ -o open_fd ${SRC2}
 clean:
-		rm display_macro_bit open_fd
+		rm open_flags open_fd
