@@ -16,6 +16,12 @@ void display_bit(const T& target)
 
 int main(int argc, char** argv)
 {
-  int a{-2};
+  char a{-125};
   display_bit(a);
+
+  char b = 2;
+  display_bit(b);
+
+  char c = a + b;
+  display_bit(c);
 }
