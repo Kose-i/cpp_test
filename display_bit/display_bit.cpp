@@ -17,11 +17,12 @@ void display_bit(const T& target)
 int main(int argc, char** argv)
 {
   char a{-125};
+  std::cout << "-125\n";
   display_bit(a);
 
   char b = 2;
   display_bit(b);
 
-  char c = a + b;
+  char c = a - b;
   display_bit(c);
 }
